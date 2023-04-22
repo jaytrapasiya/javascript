@@ -1,0 +1,12 @@
+{
+    "companylist": [
+      {
+        "name": "Tata",
+        "id": 1
+      },
+      {
+        "name": "Maruti",
+        "id": 2
+      }
+    ]
+}

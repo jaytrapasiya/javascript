@@ -1,0 +1,30 @@
+{
+  "userlist": [],
+  "citylist": [
+    {
+      "cityname": "surat",
+      "id": 1
+    },
+    {
+      "cityname": "rajkot",
+      "id": 2
+    }
+  ],
+  "productlist": [
+    {
+      "id": 1,
+      "pname": "Apple",
+      "price": 300
+    },
+    {
+      "id": 2,
+      "pname": "Mango",
+      "price": 100
+    },
+    {
+      "id": 3,
+      "pname": "Orange",
+      "price": 80
+    }
+  ]
+}

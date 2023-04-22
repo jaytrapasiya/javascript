@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        div{
+            float: left;
+            margin: 20px;
+        }
+        td{
+            text-align: center;
+        }
+    </style>
+    <script>
+        var itemlist = []
+        function getitem() {
+            data = "";
+            itemlist.map((name, index) => {
+                data = data + "<tr>";
+                data = data + "<td>" + index + "</td>";
+                data = data + "<td>" + name.name + "</td>";
+                data = data + "<td>" + name.price + "</td>";
+                data = data + "<td>" + name.qty + "</td>";
+                data = data + "<td>" + name.qty * name.price + "</td>";
+                data = data + "<td><button onclick='del(" + index + ")'>Delete</button></td>";
+                
+                data = data + "</tr>";
+    
+            })
+            document.getElementById('container').innerHTML = data;
+        }
+        function save() {
+            var iname = document.getElementById("iname").value;
+            var iprice = document.getElementById("iprice").value;
+            var iqty = document.getElementById("iqty").value;
+            var newitem = { name: iname, price: iprice, qty: iqty }
+            itemlist = itemlist.concat(newitem);
+            getitem();// reload the list after adding the item
+            document.getElementById("iname").value = "";
+            document.getElementById("iprice").value = "";
+            document.getElementById("iqty").value = "";
+        }
+        function del(index) {
+            itemlist.splice(index, 1)
+    
+            getitem()
+        }
+        
+    
+    </script>
+</head>
+
+
+<body onload="getitem()">
+<div>
+    <table>
+        <tr>
+            <th>item name</th>
+            <td><input type="text" maxlength="10" id="iname" /></td>
+        </tr>
+        <tr>
+            <th>item price</th>
+            <td><input type="number" id="iprice" /></td>
+        </tr>
+        <tr>
+            <th>item qty</th>
+            <td><input type="number" id="iqty" /></td>
+        </tr>
+        <tr>
+            <td colspan="2"><button onclick="save()"> Save</button></td>
+        </tr>
+    </table>
+</div>
+    <div>
+    <table width="400" border="1px solid">
+        <thead>
+            <tr>
+                <th>index</th>
+                <th>Name</th>
+                <th>price</th>
+                <th>qty</th>
+                <th>taotal</th>
+                <th>action</th>
+            </tr>
+        </thead>
+        <tbody id="container">
+
+        </tbody>
+    </table>
+</div>
+</body>
+
+</html>

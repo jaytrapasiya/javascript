@@ -1,0 +1,67 @@
+{
+  "Userlist": [
+    {
+      "id": 1,
+      "name": "Ganesh",
+      "number": 1234567890
+    },
+    {
+      "name": "uigui",
+      "numbar": "45678",
+      "id": 2
+    }
+  ],
+  "userlist": [
+    {
+      "id": 1,
+      "name": "Ganesh"
+    },
+    {
+      "name": "ronak",
+      "id": 2
+    },
+    {
+      "name": "maulik",
+      "id": 3
+    },
+    {
+      "name": "jay",
+      "id": 4
+    }
+  ],
+  "citylist": [
+    {
+      "id": 1,
+      "cityname": "Bangalore"
+    },
+    {
+      "id": 2,
+      "cityname": "Mangalore"
+    },
+    {
+      "id": 3,
+      "cityname": "Surat"
+    },
+    {
+      "id": 4,
+      "cityname": "Gujarat"
+    }
+  ],
+  "productlist": [
+    {
+      "id": 1,
+      "pname": "Apple",
+      "price": 300
+    },
+    {
+      "id": 2,
+      "pname": "Mango",
+      "price": 100
+    },
+    {
+      "id": 3,
+      "pname": "Orange",
+      "price": 80
+    }
+  ]
+}

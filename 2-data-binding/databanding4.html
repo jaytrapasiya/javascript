@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <script>
+            function one(){
+                var a = document.getElementById("newitem").value;
+                document.getElementById("name").innerText = a;
+
+                var p = document.getElementById("newprice").value;
+                document.getElementById("price").innerText = p;
+
+                var q = document.getElementById("newqty").value;
+                document.getElementById("qty").innerText = q;
+
+                document.getElementById("total").innerText = q*p;
+            }
+        </script>
+    </head>
+    <body>
+        <h1> html & javascipt .value and .innerText Example</h1>
+        <table cellpadding="20" border="1">
+            <tr valign="top">
+                <td>
+                   <p> Enter Item Name :<input type="text" id="newitem"/></p>
+                   <p> Enter Item price :<input type="text" id="newprice"/></p>
+                   <p> Enter Item Qty :<input type="text" id="newqty"/></p>
+                   <button onclick="one()">Go</button>
+                </td>
+                <td>
+                    <h3> The Item Details</h3>
+                    <p id="name">....</p>
+                    <p id="price">0</p>
+                    <p id="qty">0</p>
+                    <p id="total">0</p>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

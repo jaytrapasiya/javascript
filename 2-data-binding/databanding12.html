@@ -1,0 +1,137 @@
+<html>
+    <head>
+        <style>
+            section{
+                display: grid;
+                grid-template-columns: auto auto auto auto;
+            }
+            section div{
+                margin: 30px;
+                padding: 30px;
+                border: 1px solid;
+            }
+            #msg{
+                font-size: 20px;
+                font-style: italic;
+            }
+        </style>
+        <script>
+
+             var user = [
+                    {
+                    fullname:"Ganesh",
+                    mobile:9999999999,
+                    city:"Bangalore",
+                    edu:"MCA",
+                    age:"30 Year",
+                    exp:"10 Year"
+                },
+
+                {
+                    fullname:"Mahesh",
+                    mobile:8888888888,
+                    city:"Surat",
+                    edu:"BCA",
+                    age:"35 Year",
+                    exp:"12 Year"
+                },
+
+                {
+                    fullname:"Madan",
+                    mobile:7777777777,
+                    city:"Pune",
+                    edu:"CA",
+                    age:"39 Year",
+                    exp:"11 Year"
+                },
+                {
+                    fullname:"Khushi",
+                    mobile:6666666666,
+                    city:"Pune",
+                    edu:"Grafic Devloper",
+                    age:"31 Year",
+                    exp:"2 Year"
+                }
+            ];
+            function one(){
+               
+            var data = "";
+                user.map((myuser, index)=>{
+                data += "<div>";
+                data += "<h2>" + myuser.fullname + "</h2>";
+                data +=  "<p>" + myuser.age +" </p>";
+                data +=  "<p>" + myuser.edu +" </p>";
+                data +=  "<p>" + myuser.exp +" </p>";
+                data +=  "<p>" + myuser.mobile +" </p>";
+                data +=  "<p>" + myuser.city +" </p>";
+                data += "<button onclick='deluser("+index+")'> Delete </button>";
+                data += "</div>";
+
+            })
+
+                document.getElementById("info").innerHTML = data;
+            }
+
+            function two(){
+                var newuser = {
+                    fullname:document.getElementById("fname").value,
+                    mobile:document.getElementById("mobile").value,
+                    city:document.getElementById("city").value,
+                    edu:document.getElementById("edu").value,
+                    age:document.getElementById("age").value,
+                    exp:document.getElementById("exp").value
+                };
+                if(newuser.fullname=="" || newuser.mobile =="")
+                {
+                  document.getElementById("msg").innerText = "Invalid Input";
+                  document.getElementById("msg").style.color = "red";
+                }else{
+                user = user.concat(newuser);
+                one(); // reload the list after adding new element
+
+                // to clear text fields
+                document.getElementById("fname").value="";
+                document.getElementById("mobile").value="";
+                document.getElementById("city").value="";
+                document.getElementById("edu").value="";
+                document.getElementById("age").value="";
+                document.getElementById("exp").value="";
+                document.getElementById("msg").innerText = newuser.fullname + "save successfully";
+                document.getElementById("msg").style.color = "green";
+                }
+            }
+            function deluser (index){
+                var name = user[index].fullname;
+
+                user.splice(index, 1);
+                document.getElementById("msg").innerText =  name + "Deleted From Array !";
+                document.getElementById("msg").style.color = "red";
+                one();
+            }
+        </script>
+    </head>
+    <body>
+        <h1 align="center">Array of Object Example</h1>
+        <table align="center" cellpadding="10">
+            <tr>
+                <td><input type="text" id="fname" placeholder="Name"></td>
+                <td><input type="text" id="mobile" placeholder="mobile"></td>
+                <td><input type="text" id="edu" placeholder="Education"></td>
+            </tr>
+            <tr>
+                <td><input type="text" id="age" placeholder="Age"></td>
+                <td><input type="text" id="exp" placeholder="Experience"></td>
+                <td><input type="text" id="city" placeholder="City"/></td>
+            </tr>
+            <tr>
+                <th colspan="3">
+                    <button onclick="two()">Save User</button>
+                    <button onclick="one()">List User</button>
+                </th>
+            </tr>
+        </table>
+       
+        <p id="msg" align="center"></p>
+        <section id="info"></section>
+    </body>
+</html>

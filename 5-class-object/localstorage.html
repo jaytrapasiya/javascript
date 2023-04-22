@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <style>
+            #container{
+                display:grid;
+                grid-template-columns: auto auto auto auto ;
+            }
+
+            .four{
+                margin:40px;
+            }
+        </style>
+        <script>
+            var getData = () =>{
+                var jsondata = localStorage.getItem("alluser");
+                var userArray = JSON.parse(jsondata); // json to array 
+                alert(userArray.length);
+
+                var data = "";
+                userArray.map((user, index)=>{
+					data +="<div class='four'>";
+					data +="<h3>"+ user.name + "</h3>";
+					data +="<p>"+ user.email + "</p>";
+					data +="<p>"+ user.address.city + "</p>";
+					data +="<p>"+ user.company.name + "</p>";
+					data +="</div>";
+				})
+				document.getElementById("container").innerHTML = data;
+            }
+
+            var clearAll = () =>{
+                localStorage.clear(); // to clear data from localstorage
+                window.location.reload(); // to reload the current page
+            }
+        </script>
+    </head>
+    <body onload="getData()">
+        <h1> Data from localStorage </h1>
+        <button onclick="clearAll()"> Click To Clear Local Storage </button>
+        <p>
+            <a href="class5.html"> Back To API </a>
+        </p>
+        <div id="container"></div>
+    </body>
+</html>

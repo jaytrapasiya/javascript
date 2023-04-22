@@ -1,0 +1,90 @@
+<html>
+    <head>
+        <style>
+            h1{
+                text-align:center; color: blue;
+            }
+            p{
+                
+                padding: 30px 0px 30px;
+                text-align: center;
+                background:white;
+                color: red;
+                font-size: 40px;
+                margin: 30px;
+            }
+
+            #container{
+                margin-top: 30px;
+                display: grid;
+                grid-template-columns:auto auto auto auto auto ;
+                background: blue;
+                
+            }
+        </style>
+        <script>
+            function getuser(){
+                var user=["Ramesh", "Ganesh", "Ajit", "Mahesh", "Rohit", 
+                "Alex", "Madhu", "Sumit", "Jay", "Suman", "maulik"];
+
+                var data = "";
+                user.map((name, index)=>{
+                    data = data + "<p>" + name + "</p>";
+                })
+                document.getElementById("container").innerHTML=data;
+            }
+
+            function getproduct(){
+                var product=["stiil", "clothing", "iphone", "samsung", "realmi"];
+
+                var data = "";
+                product.map((name, index)=>{
+                    data = data + "<p>" + name + "</p>";
+                })
+                document.getElementById("container").innerHTML=data;
+            }
+
+            function getcity(){
+                var city=["Surat", "Junagadh", "Rajkot", "mumbai", "pune",];
+
+                var data = "";
+                city.map((name, index)=>{
+                    data = data + "<p>" + name + "</p>";
+                })
+                document.getElementById("container").innerHTML=data;
+            }
+
+            function getcompany(){
+                var company=["Tata", "Maruti", "Mahindra", "Audi", "Bmw", "Volvo", "Skoda", "Honda"];
+
+                var data = "";
+                company.map((name, index)=>{
+                    data = data + "<p>" + name + "</p>";
+                })
+                document.getElementById("container").innerHTML=data;
+            }
+
+            function getbook(){
+                var book=["Gujarati", "English", "Maths", "social since", "Gk"];
+
+                var data = "";
+                book.map((name, index)=>{
+                    data = data + "<p>" + name + "</p>";
+                })
+                document.getElementById("container").innerHTML=data;
+            }
+        </script>
+    </head>
+    <body>
+        <h1> Array Data Binding Example in Html + javascipt </h1>
+        <button onclick="getuser()"> User </button>
+        <button onclick="getproduct()"> Product </button>
+        <button onclick="getcity()"> City </button>
+        <button onclick="getcompany()"> Company </button>
+        <button onclick="getbook()"> Books </button>
+
+        <div id="container">
+  
+        </div>
+    </body>
+</html>

@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css"/>
+        <script>
+            // json-server --watch data.json --port 1234
+            function getuser(){
+                var data = "";
+                fetch("http://localhost:1234/userlist")
+                .then(response =>response.json())
+                .then(userArray =>{
+                    userArray.map((userinfo, index)=>{
+                        data += "<p class='mydata'>";
+                        data += userinfo.name;
+                        data += "<br/> <button onclick='deluser("+ userinfo.id +")'>Delete</button>";
+                        data += "</p>";
+                    })
+                    document.getElementById("container").innerHTML=data;
+                })
+            }
+
+            function getcity(){
+                var data = "";
+                fetch("http://localhost:1234/citylist")
+                .then(response =>response.json())
+                .then(cityArray =>{
+                    cityArray.map((cityinfo, index)=>{
+                        data += "<p class='mydata'>" + cityinfo.cityname + "</p>";
+                    })
+                    document.getElementById("container").innerHTML=data;
+                })
+            }
+
+            function getproduct(){
+                var data = "";
+                fetch("http://localhost:1234/productlist")
+                .then(response =>response.json())
+                .then(productArray =>{
+                    productArray.map((pinfo, index)=>{
+                        data += "<p class='mydata'>" + pinfo.pname + "---" + pinfo.price + "</p>";
+                    })
+                    document.getElementById("container").innerHTML=data;
+                })
+            }
+
+            function deluser(userid){
+                var url = "http://localhost:1234/userlist/"+userid;
+                var postdata = {
+                    headers:{"content-Type":"application/json"},
+                    method:"DELETE"
+                }
+                fetch(url, postdata)
+                .then(response=>response.json())
+                .then(serverres => {
+                    alert("Record Deleted Successfully");
+                })
+            }
+        </script>
+    </head>
+    <body onload="getuser()">
+        <ul>
+            <li> <a href="newuser.html"> NewUser </a> </li>
+            <li> <a href="#" onclick="getuser()"> User List </a> </li>
+            <li> <a href="#" onclick="getcity()"> City </a> </li>
+            <li> <a href="#" onclick="getproduct()"> Product </a> </li>
+        </ul>
+        <section id="container"> No Data </section>
+    </body>
+</html>

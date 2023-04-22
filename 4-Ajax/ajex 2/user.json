@@ -1,0 +1,16 @@
+{
+    "userlist": [
+      {
+        "name": "Ronak",
+        "id": 1
+      },
+      {
+        "name": "Maulik",
+        "id": 2
+      },
+      {
+        "name": "Jay",
+        "id": 3
+      }
+    ]
+}

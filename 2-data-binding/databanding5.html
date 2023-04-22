@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <script>
+            function one(){
+                var a = document.getElementById("fullname").value;
+                document.getElementById("name").innerText = a;
+
+                var g = document.getElementById("myage").value;
+                document.getElementById("Age").innerText = g;
+
+                var e = document.getElementById("myedu").value;
+                document.getElementById("edu").innerText = e;
+
+                var j = document.getElementById("mycity").value;
+                document.getElementById("city").innerText = j;
+
+                document.getElementById("btn1").innerText="please wait Processing..."
+                document.getElementById("btn1").disabled=true;
+            }
+        </script>
+    </head>
+    <body>
+        <h1> About My Profile </h1>
+        <p>Enter Name :  <input type="text" id="fullname"/></p>
+        <p>Enter age :  <input type="text" id="myage"/></p>
+        <p>Enter Education :  <input type="text" id="myedu"/></p>
+        <p>Enter city :  <input type="text" id="mycity"/></p>
+    
+    <button onclick="one()"id="btn1"> Go Next </button>
+
+    <br><br/>
+    <table cellpadding="10" border="1" width="1">
+        <tr> <th>Full Name</th> <td id="name"></td></tr>
+        <tr> <th>Age</th> <td id="Age"></td></tr>
+        <tr> <th>Education</th> <td id="edu"></td></tr>
+        <tr> <th>city</th> <td id="city"></td></tr>
+    </table>
+    </body>
+</html>

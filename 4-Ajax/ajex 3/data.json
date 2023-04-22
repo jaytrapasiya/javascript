@@ -1,0 +1,77 @@
+{
+  "userlist": [],
+  "citylist": [
+    {
+      "cityname": "surat",
+      "id": 1
+    },
+    {
+      "cityname": "rajkot",
+      "id": 2
+    }
+  ],
+  "productlist": [
+    {
+      "id": 1,
+      "pname": "Apple",
+      "price": 300
+    },
+    {
+      "id": 2,
+      "pname": "Mango",
+      "price": 100
+    },
+    {
+      "id": 3,
+      "pname": "Orange",
+      "price": 80
+    }
+  ],
+  "companylist":[
+    {
+      "id":1,
+      "name":"TCS",
+      "city":"bangalore",
+      "emp":5000,
+      "location":"white Field",
+      "sale":5000000
+    },
+    {
+      "id":2,
+      "name":"wipro",
+      "city":"mangalore",
+      "emp":5000,
+      "location":"white Field",
+      "sale":5000000
+    },
+    {
+      "id":3,
+      "name":"CTS",
+      "city":"Delhi",
+      "emp":5000,
+      "location":"Delhi",
+      "sale":5000000
+    },
+    {
+      "id":4,
+      "name":"Infocumpus",
+      "city":"mendarda",
+      "emp":5000,
+      "location":"surat",
+      "sale":5000000
+    }
+  ],
+  "officedata":[
+    {
+      "id":1,
+      "software":["html" , "css"],
+      "customer":["ganesh" , "ramesh" , "arjit"],
+      "product":["lead managemant"],
+      "seo":["ppc" , "ypr"],
+      "user":["mihir"],
+      "billing":["100","200","300"],
+      "content":["hospital", "education", "marketing"],
+      "client":["tcs", "wipro", "cts"]
+    }
+  ]
+}

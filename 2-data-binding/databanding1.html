@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <script>
+            var msg = "<h1>JavaScript</h1> <p>It is too good </p> It is free";
+            function one(){
+                document.getElementById("xyz").innerText=msg;
+            }
+            function two(){
+                document.getElementById("xyz").innerHTML=msg;
+            }
+        </script>
+    </head>
+    <body>
+        <h1>html javascript innerText & innerHTML</h1>
+        <button onclick="one()"> innerText </button>
+        <button onclick="two()"> innerHTML </button>
+
+        <br><br/>
+        <div id="xyz"> No Data</div>
+        <div> innerHTML & unnerText are pre-difined property of javascript</div>
+    </body>
+</html>

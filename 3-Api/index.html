@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <style>
+            #container{
+                width: 80%;
+                margin: 40px auto 40px;
+            }
+        </style>
+        <script>
+            function gethome(){
+               fetch("home.html")
+               .then(response =>response.text())
+               .then(fileData =>{
+                document.getElementById("container"). innerHTML = fileData;
+               })
+            }
+
+            function getabout(){
+                fetch("about.html")
+               .then(response =>response.text())
+               .then(fileData =>{
+                document.getElementById("container"). innerHTML = fileData;
+               })
+            }
+
+            function getservise(){
+                fetch("service.html")
+               .then(response =>response.text())
+               .then(fileData =>{
+                document.getElementById("container"). innerHTML = fileData;
+               })
+            }
+
+            function getgallery(){
+                fetch("gallery.html")
+               .then(response =>response.text())
+               .then(fileData =>{
+                document.getElementById("container"). innerHTML = fileData;
+               })
+            }
+            function getcontact(){
+                fetch("contact.html")
+               .then(response =>response.text())
+               .then(fileData =>{
+                document.getElementById("container"). innerHTML = fileData;
+               })
+            }
+            function getproduct(){
+                fetch("product.html")
+                .then(response =>response.text())
+                .then(fileData =>{
+                    document.getElementById("container").innerHTML = fileData;
+                })
+            }
+            
+
+            function getitem(){
+                var data = "";
+                fetch("item.json")
+               .then(response =>response.json())
+               .then(itemArray =>{
+                    itemArray.map((name,index)=>{
+                        data += "<p>" + name + "</p>";
+                    })
+                    document.getElementById("container").innerHTML=data;
+               })
+            }
+        </script>
+    </head>
+    <body align="center">
+        <h1 align="center">Javascript fetch() Basic Example  </h1>
+        <button onclick="gethome()"> Home </button>
+        <button onclick="getabout()"> About </button>
+        <button onclick="getservise()"> Service </button>
+        <button onclick="getgallery()"> Gallery </button>
+        <button onclick="getcontact()"> Contact Us </button>
+        <button onclick="getproduct()">product</button>
+        <button onclick="getitem()"> item List </button>
+        
+
+        <div id="container">NO Data</div>
+    </body>
+</html>

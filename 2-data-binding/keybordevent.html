@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <script>
+            function one (input){
+                alert(input);
+            }
+        </script>
+    </head>
+    <body align="center" onload=" one(' Welcome Back...... ')">
+        <h1> keyboard Event Example </h1>
+        <p>
+            onkeypress : 
+            <input type="text" onkeypress="one(value)" value="mumbai"/>
+        </p>
+        <p>
+            on key up : 
+            <input type="text" onkeyup="one(value)" value="mumbai"/>
+        </p>
+        <p>
+            on key down :
+            <input type="text" onkeydown="one(value)" value="mumbai"/>
+        </p>
+        <p>
+            on focus :
+            <input type="text" onfocus="one(value)" value="mumbai"/>
+        </p>
+        <p>
+            on blur :
+            <input type="text" onblur="one(value)" value="mumbai"/>
+        </p>
+    </body>
+</html>

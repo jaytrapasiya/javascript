@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <script>
+            var two = ()=> {
+                document.getElementById("fullname").innerText = localStorage.getItem("name");
+                document.getElementById("city").innerText = localStorage.getItem("city");
+                document.getElementById("education").innerText = localStorage.getItem("edu");
+                document.getElementById("email").innerText = localStorage.getItem("email");
+                document.getElementById("add").innerText = localStorage.getItem("addreass");
+            }
+            function three () {
+                localStorage.clear();
+                window.location.reload();
+            }
+        </script>
+    </head>
+    <body onload="two()" align="center">
+        <h1>Data from localStorage</h1>
+        <h2 id="fullname"></h2>
+        <h2 id="city"></h2>
+        <h2 id="education"></h2>
+        <h2 id="email"></h2>
+        <h2 id="add"></h2>
+
+
+        <button onclick="three()">Clear</button>
+    </body>
+</html>

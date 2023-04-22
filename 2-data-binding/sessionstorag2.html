@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <script>
+            var two = ()=> {
+                document.getElementById("fullname").innerText = sessionStorage.getItem("name");
+                document.getElementById("city").innerText = sessionStorage.getItem("city");
+                document.getElementById("education").innerText = sessionStorage.getItem("edu");
+                document.getElementById("email").innerText = sessionStorage.getItem("email");
+                document.getElementById("add").innerText = sessionStorage.getItem("addreass");
+            }
+            function three () {
+                sessionStorage.clear();
+                window.location.reload();
+            }
+        </script>
+    </head>
+    <body onload="two()" align="center">
+        <h1>Data from sessionStorage</h1>
+        <h2 id="fullname"></h2>
+        <h2 id="city"></h2>
+        <h2 id="education"></h2>
+        <h2 id="email"></h2>
+        <h2 id="add"></h2>
+
+        <button onclick="three()">Clear</button>
+    </body>
+</html>

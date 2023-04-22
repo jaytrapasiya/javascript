@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <script>
+            function save(){
+                var fullname = document.getElementById("fname").value;
+                var data ={
+                    "name":fullname
+                };
+                var postdata = {
+                    headers:{"Content-Type":"application/json"},
+                    method:"POST",
+                    body:JSON.stringify(data) // array to json
+                };
+                var url = "http://localhost:1234/userlist";
+
+                fetch(url, postdata)
+                .then(response=>response.json())
+                .then(serverRes =>{
+                    window.location.href="index2.html";
+                    // auto redirect to list page
+                })
+            }
+        </script>
+    </head>
+    <body>
+        <h1 align="center"> Add New User </h1>
+        <p  align="center">
+            Enter Full Name
+        </p>
+        <p  align="center">
+            <input type="text" name="" id="fname"/>
+        </p>
+        <p  align="center">
+            <button onclick="save()">Save User</button>
+        </p>
+
+        <p align="center">
+            <a href="index2.html"> Back To User List </a>
+        </p>
+    </body>
+</html>

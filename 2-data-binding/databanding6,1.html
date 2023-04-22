@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <script>
+             function one(){
+                var a = document.getElementById("fullname").value;
+                document.getElementById("name").innerText = a;
+
+                var b = document.getElementById("e-mail").value;
+                document.getElementById("email").innerText = b;
+
+                var c = document.getElementById("mobileone").value;
+                document.getElementById("mobile").innerText = c;
+
+                var d = document.getElementById("skill").value;
+                document.getElementById("myskill").innerText = d;
+            }           
+        </script>
+
+        <style>
+            fieldset{
+                width: 500px;
+                background-color: rgb(240, 227, 166);
+            }
+           div{
+            float: left;
+           }
+           button{
+            background-color: rgb(255, 255, 255);
+            border: none;
+            margin: 10px 0px 10px 0px;
+            padding: 7px 10px;
+           }
+            
+        </style>
+    </head>
+    <body>
+        <div><fieldset> <legend>Enter your data</legend>
+            
+                <table cellpadding="5">
+                    <tr>
+                        <td> Name : </td> <td><input type="text" id="fullname"/></td>
+                    </tr>
+                    <tr>
+                        <td> e-Mail : </td> <td><input type="text" id="e-mail"/></td>
+                    </tr>
+                    <tr>
+                        <td> Mobile : </td> <td><input type="text" id="mobileone"/></td>
+                    </tr>
+                    <tr>
+                        <td> Skill : </td> <td><input type="text" id="skill"/></td>
+                    </tr>
+                    <tr>
+                        <td><button onclick="one()"> Process </button></td>
+                    </tr>
+                    
+                </table></fieldset>
+        </div>
+        <div>
+            <fieldset><legend>Personal Details</legend>
+               
+                <table cellpadding="10" border="0">
+                    <tr> <th>Your Name</th> <td id="name"></td></tr>
+                    <tr> <th>e-Mail Id</th> <td id="email"></td></tr>
+                    <tr> <th>Mobile</th> <td id="mobile"></td></tr>
+                </table></fieldset>
+            
+            <fieldset><legend>My Skill</legend>
+                <table cellpadding="10" border="0">
+                    <tr> <td id="myskill"></td></tr>
+                </table></fieldset>
+            
+        </div>
+        
+    </body>
+</html>

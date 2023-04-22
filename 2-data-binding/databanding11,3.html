@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <style>
+            section{
+                display: grid;
+                width: 80%;
+                margin: auto;
+                grid-template-columns: auto auto ;
+                background-color: rgb(130, 126, 126);
+                text-align: center;
+            }
+            button{
+                background-color: rgb(144, 187, 138);
+                border: none;
+                padding: 8px 12px;
+            }
+            h2{
+                
+                text-align: center;
+                background:white;
+                color: red;
+                font-size: 40px;
+                margin: 30px;
+            }
+            h3{
+                background-color: rgb(255, 255, 255);
+                padding: 10px 15px;
+                margin: 10px 30px;
+            }
+        </style>
+        <script>
+            var item = ["Tata", "Maruti", "Mahindra", "Audi", "Bmw", "Volvo", "Skoda", "Honda",];
+            function getitem(){
+                var alltr = "";
+                item.map((name, index)=>{
+                    alltr = alltr + "<div>";
+                    
+                    alltr = alltr + "<h3>" + name + "</h3>";
+                    alltr = alltr + "<p> <button onclick='delitem("+ index +")'>Delete</button> </p>";
+                    alltr = alltr + "</div>";
+                })
+                document.getElementById("itemlist").innerHTML = alltr;
+
+            }
+
+            function delitem(index){
+                item.splice(index, 1);
+                getitem(); // to reload the list after delete
+            }
+            function save(){
+                var itemname = document.getElementById("newitem").value;
+                item.push(itemname);
+                getitem();// reload the list after adding the item
+                document.getElementById("newitem").value="";
+            }
+        </script>
+    </head>
+    <body onload="getitem()">
+        <h1 align="center">
+           Company
+        </h1>
+        <p align="center">
+            enter item name : <input type="text" id="newitem"/>
+            <button onclick="save()"> save item </button> 
+        </p>
+
+        <section id ="itemlist">
+            No Records 
+        </section>
+
+       </table>
+    </body>
+</html>

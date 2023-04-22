@@ -1,0 +1,46 @@
+<html>
+    <head>
+       <script>
+            function save(){
+                var fullname = document.getElementById("fname").value;
+                var mobilenumber = document.getElementById("mnumber").value;
+                var data ={
+                    "name":fullname,
+                    "numbar":mobilenumber
+                };
+                alert("Please wait Processing...");
+                var postdata = {
+                    headers:{"Content-Type":"application/json"},
+                    method:"POST",
+                    body:JSON.stringify(data) // array to json
+                };
+                var url = "http://localhost:1234/Userlist";
+
+                fetch(url, postdata)
+                .then(response=>response.json())
+                .then(serverRes =>{
+                    window.location.href="index2.html";
+                    // auto redirect to list page
+                })
+                alert()
+            }
+        </script>
+    </html>
+        <body>
+            <form>
+                <table cellpadding="5">
+                    <tr>
+                        <td>Full Name : </td>
+                        <td><input type="text" placeholder="Full Name" name="" id="fname"/></td>
+                    </tr>
+                    <tr>
+                        <td>Mobil No : </td>
+                        <td><input type="number" placeholder="Mobil Number" numbar="" id="mnumber"/></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center"><button onclick="save()">Save User</button></td>
+                    </tr>
+                </table>
+            </form>
+        </body>
+</html>
